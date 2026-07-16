@@ -1,0 +1,48 @@
+# Datos crudos y pesados (no se suben al repo)
+data/raw/
+data/interim/
+
+# El dataset procesado SI se versiona porque es liviano y es la entrada
+# reproducible del resto del pipeline. Si llegara a pesar demasiado,
+# descomentar la siguiente linea y documentar en el README como regenerarlo:
+# data/processed/
+
+# Checkpoints y artefactos de modelos (pueden pesar varios GB)
+checkpoints/
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Cache de Hugging Face / transformers / datasets
+.cache/
+~/.cache/huggingface/
+huggingface_cache/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs de entrenamiento / TensorBoard / Weights & Biases
+runs/
+logs/
+wandb/
+
+# Archivos de sistema / editor
+.DS_Store
+.vscode/
+*.swp
+
+# Variables de entorno / credenciales
+.env
