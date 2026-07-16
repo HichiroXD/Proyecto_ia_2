@@ -35,8 +35,11 @@ Estos archivos proporcionan las particiones oficiales de entrenamiento, validaci
 
 Aunque el dataset incluye imágenes (`img_resized`) y el texto obtenido mediante OCR (`img_txt`), dichos recursos no serán utilizados en esta primera versión del proyecto.
 
-Fuente:
-https://www.kaggle.com/datasets/victorcallejasf/multimodal-hate-speech
+**Nota sobre calidad de datos:** durante la construcción inicial del dataset se detectó que, en la primera descarga, `train_ids.txt` y `test_ids.txt` contenían exactamente los mismos 10,000 IDs (error de copiado de archivos durante la descarga). Esto se identificó mediante verificación de intersección de conjuntos y se corrigió volviendo a descargar el dataset, confirmando splits disjuntos con los tamaños oficiales: `train` (134,823), `val` (5,000) y `test` (10,000). El proceso de validación queda documentado en `01_build_dataset.ipynb`.
+
+Otro hallazgo relevante: los splits `val` y `test` están **balanceados casi perfectamente (~50% Hate / ~50% NotHate)**, mientras que `train` conserva la distribución natural del dataset (~78% NotHate / ~22% Hate). Esto es consistente con una práctica común de diseño de datasets: balancear los conjuntos de evaluación para obtener métricas más interpretables, dejando el desbalance real únicamente en el conjunto de entrenamiento.
+
+Fuente: https://www.kaggle.com/datasets/victorcallejasf/multimodal-hate-speech
 
 ### Variables utilizadas
 
