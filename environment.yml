@@ -1,0 +1,23 @@
+name: hate-speech-detection
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - jupyter
+  - ipykernel
+  - pip:
+      - torch
+      - transformers
+      - datasets
+      - accelerate
+      - evaluate
+      - wordcloud
+      - emoji
